@@ -1,23 +1,24 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 interface Products {
-    value: number;
-  }
+  products: any;
+}
 
-const initialProduct: Products[] = [];
+const initialProduct: any = {
+  products: [],
+};
 
-export const productSlice = createSlice({
+export const ProductSlice = createSlice({
   name: 'Products',
   initialState: initialProduct,
   reducers: {
     setProducts: (state, action: PayloadAction<Products[]>) => {
-      state = action.payload;
+      console.log('sdfsdfs', action.payload);
+      state.products = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setProducts } =
-  productSlice.actions;
+export const {setProducts} = ProductSlice.actions;
 // You must export the reducer as follows for it to be able to be read by the store.
-export default productSlice.reducer;
+export default ProductSlice.reducer;

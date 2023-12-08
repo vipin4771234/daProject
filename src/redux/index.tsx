@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "../redux";
+import {configureStore} from '@reduxjs/toolkit';
+import ProductSlice from './ProductSlice';
 
 const store: any = configureStore({
   reducer: {
-    product: productReducer,
+    product: ProductSlice,
   },
 });
 
